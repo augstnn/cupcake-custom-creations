@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Order totals are computed only in the `place_order` database function from product/option prices; the client cart price is display-only (prevents price tampering).
+- Cart lives in browser localStorage via `src/lib/cart.tsx`; orders and catalog live in the database.
