@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useQueryClient } from "@tanstack/react-query";
-import { ShoppingBag, LogOut } from "lucide-react";
+import { ShoppingBag, LogOut, Menu } from "lucide-react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/lib/cart";
 import { useAuth } from "@/hooks/use-auth";
@@ -25,7 +26,7 @@ export function SiteHeader() {
         <Link to="/" className="font-display text-2xl font-semibold text-primary">
           Doce Forno
         </Link>
-        <nav className="flex items-center gap-1 text-sm">
+        <nav className="hidden items-center gap-1 text-sm md:flex">
           <Button asChild variant="ghost" size="sm"><Link to="/">Cardápio</Link></Button>
           {user && <Button asChild variant="ghost" size="sm"><Link to="/pedidos">Meus pedidos</Link></Button>}
           {isAdmin && <Button asChild variant="ghost" size="sm"><Link to="/admin">Painel</Link></Button>}
@@ -37,11 +38,38 @@ export function SiteHeader() {
           ) : (
             <Button asChild variant="ghost" size="sm"><Link to="/auth">Entrar</Link></Button>
           )}
-          <Button asChild size="sm" className="ml-1 rounded-full">
-            <Link to="/carrinho"><ShoppingBag /> {count}</Link>
-          </Button>
+          <CartButton count={count} />
         </nav>
+        <div className="flex items-center gap-2 md:hidden">
+          <CartButton count={count} />
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon" aria-label="Menu"><Menu /></Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-48">
+              <DropdownMenuItem asChild><Link to="/">Cardápio</Link></DropdownMenuItem>
+              {user && <DropdownMenuItem asChild><Link to="/pedidos">Meus pedidos</Link></DropdownMenuItem>}
+              {isAdmin && <DropdownMenuItem asChild><Link to="/admin">Painel</Link></DropdownMenuItem>}
+              {user ? (
+                <>
+                  <DropdownMenuItem asChild><Link to="/perfil">Perfil</Link></DropdownMenuItem>
+                  <DropdownMenuItem onSelect={signOut}>Sair</DropdownMenuItem>
+                </>
+              ) : (
+                <DropdownMenuItem asChild><Link to="/auth">Entrar</Link></DropdownMenuItem>
+              )}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </div>
     </header>
+  );
+}
+
+function CartButton({ count }: { count: number }) {
+  return (
+    <Button asChild size="sm" className="ml-1 rounded-full">
+      <Link to="/carrinho" aria-label="Carrinho"><ShoppingBag /> {count}</Link>
+    </Button>
   );
 }
