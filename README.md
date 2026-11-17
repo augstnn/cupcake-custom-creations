@@ -1,70 +1,81 @@
-# Cupcake Custom Creations
+# Doce Forno — Website de Cupcakes
 
-criar loja de cupcakes com:
+## Sobre o projeto
 
-Cadastro e login de clientes.
+O **Doce Forno** é um website desenvolvido para apresentar e comercializar cupcakes personalizados. A plataforma oferece uma experiência simples e intuitiva, permitindo que os clientes conheçam os produtos disponíveis e tenham acesso às informações de cada opção.
 
-Catálogo de cupcakes.
+O objetivo é proporcionar uma experiência agradável de navegação, facilitando a escolha de cupcakes e a realização de pedidos.
 
-Detalhes dos produtos.
+## Acesso ao website
 
-Personalização dos cupcakes.
+**Website:** https://cupcake-custom-creations.lovable.app
 
-Carrinho de compras.
+**Repositório:** https://github.com/augstnn/cupcake-custom-creations
 
-Criação e acompanhamento de pedidos.
+## Funcionalidades
 
-Painel administrativo.
+O website tem como proposta oferecer os seguintes recursos:
 
-Funcionalidades que deixaremos para depois:
+- **Catálogo de produtos:** visualização dos cupcakes disponíveis.
+- **Detalhes dos produtos:** apresentação das informações, descrições e preços.
+- **Personalização:** possibilidade de escolher características dos cupcakes, como massa, recheio e cobertura.
+- **Carrinho de compras:** organização dos produtos selecionados.
+- **Pedidos:** envio e acompanhamento dos pedidos.
+- **Área administrativa:** gerenciamento dos produtos e consulta dos pedidos.
 
-Pagamento online
+*Observação: a disponibilidade de cada funcionalidade depende da implementação atual do website.*
 
-Começaremos com pagamento na retirada ou simulado.
+## Tecnologias utilizadas
 
-Entrega em domicílio
+- **Lovable:** ferramenta utilizada para criação e desenvolvimento do website.
+- **React:** biblioteca utilizada para construção da interface.
+- **TypeScript:** linguagem utilizada no desenvolvimento.
+- **Vite:** ferramenta de desenvolvimento e compilação.
+- **Tailwind CSS:** estilização da interface.
+- **Supabase:** serviço de backend e banco de dados, conforme a configuração do projeto.
+- **GitHub:** hospedagem e controle de versão do código-fonte.
 
-Inicialmente trabalharemos somente com retirada na loja.
+## Estrutura do projeto
 
-Integração com entregadores
+O projeto está organizado em diretórios e arquivos responsáveis pela interface, componentes, configurações e integração com os serviços utilizados.
 
-Não será necessária nesta etapa.
+Principais diretórios:
 
-Relatórios avançados
+- `src/` — código-fonte da aplicação.
+- `public/` — arquivos públicos e recursos estáticos.
+- `supabase/` — arquivos relacionados à configuração do Supabase.
+- `drizzle/` — arquivos relacionados ao gerenciamento do banco de dados.
 
-Primeiro precisamos ter pedidos reais.
+## Executar o projeto localmente
 
-Histórico completo de compras
+Para executar o website em um ambiente local, é necessário ter o Node.js e o npm instalados.
 
-Pode ser implementado posteriormente.
+1. Clone o repositório:
 
-Pesquisa e filtros avançados
+   ```bash
+   git clone https://github.com/augstnn/cupcake-custom-creations.git
+   ```
 
-O catálogo inicial será simples.
+2. Acesse a pasta do projeto:
 
-Recuperação personalizada de senha
+   ```bash
+   cd cupcake-custom-creations
+   ```
 
-Podemos utilizar uma solução básica inicialmente.
+3. Instale as dependências:
 
-This project was built with [Lovable](https://lovable.dev).
+   ```bash
+   npm install
+   ```
 
-**Live app**: https://cupcake-custom-creations.lovable.app
+4. Inicie o ambiente de desenvolvimento:
 
-## Build with Lovable
+   ```bash
+   npm run dev
+   ```
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/8bcee860-d05a-5c9c-b97f-657f54d32912).
+5. Acesse o endereço local apresentado no terminal.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+## Autor
 
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+Projeto desenvolvido por: **Augusto Evangelista Neves**
