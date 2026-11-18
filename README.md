@@ -1,81 +1,80 @@
-# Doce Forno — Website de Cupcakes
+# Cupcake Custom Creations
 
-## Sobre o projeto
+Aplicação web para uma loja de cupcakes personalizados. O projeto tem como objetivo permitir que clientes conheçam os produtos, personalizem cupcakes e organizem pedidos, enquanto a administração acompanha e gerencia as operações da loja.
 
-O **Doce Forno** é um website desenvolvido para apresentar e comercializar cupcakes personalizados. A plataforma oferece uma experiência simples e intuitiva, permitindo que os clientes conheçam os produtos disponíveis e tenham acesso às informações de cada opção.
+> **Estado da documentação:** elaborada a partir das informações públicas do repositório, do README existente e das dependências declaradas no projeto. Os itens identificados como planejados ou sujeitos à validação não devem ser interpretados como funcionalidades já concluídas.
 
-O objetivo é proporcionar uma experiência agradável de navegação, facilitando a escolha de cupcakes e a realização de pedidos.
+## Objetivos do sistema
 
-## Acesso ao website
+- Apresentar um catálogo de cupcakes.
+- Permitir cadastro e autenticação de clientes.
+- Exibir detalhes dos produtos.
+- Oferecer opções de personalização.
+- Organizar produtos em um carrinho.
+- Registrar e acompanhar pedidos.
+- Disponibilizar recursos administrativos para a gestão da loja.
 
-**Website:** https://cupcake-custom-creations.lovable.app
+## Escopo inicial
 
-**Repositório:** https://github.com/augstnn/cupcake-custom-creations
+A primeira versão prioriza o fluxo de compra com retirada na loja. O README do projeto informa que pagamento online, entrega em domicílio, integração com entregadores, relatórios avançados, histórico completo de compras, filtros avançados e recuperação personalizada de senha ficam para etapas posteriores. O pagamento inicial pode ocorrer na retirada ou por simulação, conforme a definição do projeto.
 
-## Funcionalidades
+## Tecnologias identificadas
 
-O website tem como proposta oferecer os seguintes recursos:
+- React 19 e TypeScript
+- TanStack Start e TanStack Router
+- Vite
+- Supabase JavaScript Client
+- Tailwind CSS 4
+- Drizzle ORM e Drizzle Kit
+- Vitest para testes automatizados
 
-- **Catálogo de produtos:** visualização dos cupcakes disponíveis.
-- **Detalhes dos produtos:** apresentação das informações, descrições e preços.
-- **Personalização:** possibilidade de escolher características dos cupcakes, como massa, recheio e cobertura.
-- **Carrinho de compras:** organização dos produtos selecionados.
-- **Pedidos:** envio e acompanhamento dos pedidos.
-- **Área administrativa:** gerenciamento dos produtos e consulta dos pedidos.
+As versões e dependências devem ser conferidas no package.json do repositório, pois podem mudar durante o desenvolvimento.
 
-*Observação: a disponibilidade de cada funcionalidade depende da implementação atual do website.*
+## Estrutura da documentação
 
-## Tecnologias utilizadas
+| Arquivo | Conteúdo |
+|---|---|
+| [Introdução e objetivos](docs/01-introducao-objetivos.md) | Contexto, problema, justificativa e objetivos |
+| [Requisitos funcionais](docs/02-requisitos-funcionais.md) | Serviços e comportamentos esperados |
+| [Requisitos não funcionais](docs/03-requisitos-nao-funcionais.md) | Qualidade, segurança e usabilidade |
+| [Regras de negócio](docs/04-regras-de-negocio.md) | Restrições do processo da loja |
+| [Arquitetura](docs/05-arquitetura.md) | Organização técnica e componentes |
+| [Dados](docs/06-modelagem-dados.md) | Diretrizes para documentação do banco |
+| [Casos de uso](docs/07-casos-de-uso.md) | Atores e fluxos principais |
+| [Tecnologias e execução](docs/08-tecnologias-execucao.md) | Ferramentas e instruções de desenvolvimento |
+| [Plano de testes](docs/09-plano-testes.md) | Estratégia e cenários de teste |
+| [Limitações e evolução](docs/10-limitacoes-evolucao.md) | Escopo atual e melhorias futuras |
 
-- **Lovable:** ferramenta utilizada para criação e desenvolvimento do website.
-- **React:** biblioteca utilizada para construção da interface.
-- **TypeScript:** linguagem utilizada no desenvolvimento.
-- **Vite:** ferramenta de desenvolvimento e compilação.
-- **Tailwind CSS:** estilização da interface.
-- **Supabase:** serviço de backend e banco de dados, conforme a configuração do projeto.
-- **GitHub:** hospedagem e controle de versão do código-fonte.
+## Executar localmente
 
-## Estrutura do projeto
+Pré-requisitos: Node.js compatível com as dependências do projeto, npm e acesso às configurações necessárias do Supabase.
 
-O projeto está organizado em diretórios e arquivos responsáveis pela interface, componentes, configurações e integração com os serviços utilizados.
+```bash
+git clone https://github.com/augstnn/cupcake-custom-creations.git
+cd cupcake-custom-creations
+npm install
+npm run dev
+```
 
-Principais diretórios:
+Os comandos acima seguem as instruções básicas do repositório. Para compilar, validar estilo e executar testes, os scripts declarados são:
 
-- `src/` — código-fonte da aplicação.
-- `public/` — arquivos públicos e recursos estáticos.
-- `supabase/` — arquivos relacionados à configuração do Supabase.
-- `drizzle/` — arquivos relacionados ao gerenciamento do banco de dados.
+```bash
+npm run build
+npm run lint
+npm run test
+```
 
-## Executar o projeto localmente
+A aplicação pode depender de variáveis de ambiente e de serviços externos. Configure-as conforme os arquivos de configuração do projeto e do painel Supabase. **Não publique chaves privadas, tokens ou senhas no GitHub.** O arquivo .env não deve ser versionado.
 
-Para executar o website em um ambiente local, é necessário ter o Node.js e o npm instalados.
+## Ambiente publicado
 
-1. Clone o repositório:
+O README do repositório informa o endereço de demonstração:  
+https://cupcake-custom-creations.lovable.app
 
-   ```bash
-   git clone https://github.com/augstnn/cupcake-custom-creations.git
-   ```
+## Repositório
 
-2. Acesse a pasta do projeto:
+https://github.com/augstnn/cupcake-custom-creations
 
-   ```bash
-   cd cupcake-custom-creations
-   ```
+## Observação acadêmica
 
-3. Instale as dependências:
-
-   ```bash
-   npm install
-   ```
-
-4. Inicie o ambiente de desenvolvimento:
-
-   ```bash
-   npm run dev
-   ```
-
-5. Acesse o endereço local apresentado no terminal.
-
-## Autor
-
-Projeto desenvolvido por: **Augusto Evangelista Neves**
+Esta documentação descreve o escopo declarado e a estrutura técnica identificada no repositório. Antes da entrega final, recomenda-se conferir no código e no Supabase quais funcionalidades estão efetivamente implementadas, quais tabelas e relacionamentos existem e quais testes foram executados. Não se afirma que funcionalidades planejadas já estejam concluídas.
