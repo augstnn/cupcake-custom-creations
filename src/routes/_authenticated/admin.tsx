@@ -15,7 +15,7 @@ import type { Database } from "@/integrations/supabase/types";
 type Status = Database["public"]["Enums"]["order_status"];
 
 export const Route = createFileRoute("/_authenticated/admin")({
-  head: () => ({ meta: [{ title: "Painel — Doce Forno" }, { name: "robots", content: "noindex" }] }),
+  head: () => ({ meta: [{ title: "Painel — Doce Forno" }, { name: "description", content: "Administração de cupcakes e pedidos da Doce Forno." }, { property: "og:title", content: "Painel — Doce Forno" }, { property: "og:description", content: "Administração de cupcakes e pedidos da loja." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }, { name: "robots", content: "noindex" }] }),
   component: Admin,
 });
 

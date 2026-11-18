@@ -9,7 +9,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/use-auth";
 
 export const Route = createFileRoute("/_authenticated/perfil")({
-  head: () => ({ meta: [{ title: "Meu perfil — Doce Forno" }, { name: "description", content: "Seus dados de contato." }] }),
+  head: () => ({ meta: [{ title: "Meu perfil — Doce Forno" }, { name: "description", content: "Seus dados de contato." }, { property: "og:title", content: "Meu perfil — Doce Forno" }, { property: "og:description", content: "Seus dados de contato na Doce Forno." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }),
   component: Profile,
 });
 

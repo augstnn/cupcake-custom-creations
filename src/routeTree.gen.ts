@@ -13,7 +13,9 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as CarrinhoRouteImport } from './routes/carrinho'
+import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as AuthenticatedPerfilRouteImport } from './routes/_authenticated/perfil'
 import { Route as ProdutoIdRouteImport } from './routes/produto.$id'
@@ -39,9 +41,19 @@ const CarrinhoRoute = CarrinhoRouteImport.update({
   path: '/carrinho',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ResetPasswordRoute = ResetPasswordRouteImport.update({
   id: '/reset-password',
   path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
@@ -75,7 +87,9 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/carrinho': typeof CarrinhoRoute
+  '/contato': typeof ContatoRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/sobre': typeof SobreRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/perfil': typeof AuthenticatedPerfilRoute
   '/produto/$id': typeof ProdutoIdRoute
@@ -86,7 +100,9 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/carrinho': typeof CarrinhoRoute
+  '/contato': typeof ContatoRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/sobre': typeof SobreRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/perfil': typeof AuthenticatedPerfilRoute
   '/produto/$id': typeof ProdutoIdRoute
@@ -99,7 +115,9 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
   '/carrinho': typeof CarrinhoRoute
+  '/contato': typeof ContatoRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/sobre': typeof SobreRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/_authenticated/perfil': typeof AuthenticatedPerfilRoute
   '/produto/$id': typeof ProdutoIdRoute
@@ -112,7 +130,9 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/carrinho'
+    | '/contato'
     | '/reset-password'
+    | '/sobre'
     | '/admin'
     | '/perfil'
     | '/produto/$id'
@@ -123,7 +143,9 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/carrinho'
+    | '/contato'
     | '/reset-password'
+    | '/sobre'
     | '/admin'
     | '/perfil'
     | '/produto/$id'
@@ -135,7 +157,9 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/auth'
     | '/carrinho'
+    | '/contato'
     | '/reset-password'
+    | '/sobre'
     | '/_authenticated/admin'
     | '/_authenticated/perfil'
     | '/produto/$id'
@@ -148,7 +172,9 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
   CarrinhoRoute: typeof CarrinhoRoute
+  ContatoRoute: typeof ContatoRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
+  SobreRoute: typeof SobreRoute
   ProdutoIdRoute: typeof ProdutoIdRoute
 }
 
@@ -182,11 +208,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CarrinhoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reset-password': {
       id: '/reset-password'
       path: '/reset-password'
       fullPath: '/reset-password'
       preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/admin': {
@@ -249,7 +289,9 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
   CarrinhoRoute: CarrinhoRoute,
+  ContatoRoute: ContatoRoute,
   ResetPasswordRoute: ResetPasswordRoute,
+  SobreRoute: SobreRoute,
   ProdutoIdRoute: ProdutoIdRoute,
 }
 export const routeTree = rootRouteImport

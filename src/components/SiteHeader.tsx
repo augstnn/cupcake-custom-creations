@@ -28,6 +28,8 @@ export function SiteHeader() {
         </Link>
         <nav className="hidden items-center gap-1 text-sm md:flex">
           <Button asChild variant="ghost" size="sm"><Link to="/">Cardápio</Link></Button>
+          <Button asChild variant="ghost" size="sm"><Link to="/sobre">Sobre Nós</Link></Button>
+          <Button asChild variant="ghost" size="sm"><Link to="/contato">Contato</Link></Button>
           {user && <Button asChild variant="ghost" size="sm"><Link to="/pedidos">Meus pedidos</Link></Button>}
           {isAdmin && <Button asChild variant="ghost" size="sm"><Link to="/admin">Painel</Link></Button>}
           {user ? (
@@ -48,6 +50,8 @@ export function SiteHeader() {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-48">
               <DropdownMenuItem asChild><Link to="/">Cardápio</Link></DropdownMenuItem>
+              <DropdownMenuItem asChild><Link to="/sobre">Sobre Nós</Link></DropdownMenuItem>
+              <DropdownMenuItem asChild><Link to="/contato">Contato</Link></DropdownMenuItem>
               {user && <DropdownMenuItem asChild><Link to="/pedidos">Meus pedidos</Link></DropdownMenuItem>}
               {isAdmin && <DropdownMenuItem asChild><Link to="/admin">Painel</Link></DropdownMenuItem>}
               {user ? (

@@ -28,6 +28,10 @@ export const Route = createFileRoute("/produto/$id")({
           { property: "og:description", content: loaderData.description },
           { property: "og:type", content: "product" },
           { name: "twitter:card", content: "summary_large_image" },
+          ...(/^https:\/\//.test(loaderData.image_url) ? [
+            { property: "og:image", content: loaderData.image_url },
+            { name: "twitter:image", content: loaderData.image_url },
+          ] : []),
         ]
       : [{ title: "Cupcake indisponível" }, { name: "robots", content: "noindex" }],
   }),

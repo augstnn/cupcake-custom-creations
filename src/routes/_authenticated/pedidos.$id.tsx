@@ -5,7 +5,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { brl, STATUS_FLOW, STATUS_LABEL } from "@/lib/format";
 
 export const Route = createFileRoute("/_authenticated/pedidos/$id")({
-  head: () => ({ meta: [{ title: "Acompanhar pedido — Doce Forno" }, { name: "description", content: "Status do seu pedido." }] }),
+  head: () => ({ meta: [{ title: "Acompanhar pedido — Doce Forno" }, { name: "description", content: "Status do seu pedido." }, { property: "og:title", content: "Acompanhar pedido — Doce Forno" }, { property: "og:description", content: "Confira os cupcakes e o status do seu pedido." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }),
   component: OrderDetail,
 });
 

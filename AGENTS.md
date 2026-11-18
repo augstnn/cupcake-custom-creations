@@ -32,3 +32,4 @@ use the editor.
 ## Project rules
 - Order totals are computed only in the `place_order` database function from product/option prices; the client cart price is display-only (prevents price tampering).
 - Cart lives in browser localStorage via `src/lib/cart.tsx`; orders and catalog live in the database.
+- Public institutional contact details live in `src/lib/store-info.ts`, shared by Contact and the footer; empty values disable destinations so no fictional contact links are published.

@@ -15,6 +15,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/sonner";
 import { CartProvider } from "@/lib/cart";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 import { supabase } from "@/integrations/supabase/client";
 
 function NotFoundComponent() {
@@ -143,6 +144,7 @@ function RootComponent() {
         <main className="min-h-[calc(100vh-4rem)]">
           <Outlet />
         </main>
+        <SiteFooter />
         <Toaster richColors position="top-center" />
       </CartProvider>
     </QueryClientProvider>

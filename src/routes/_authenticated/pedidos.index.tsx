@@ -6,7 +6,7 @@ import { StatusBadge } from "@/components/StatusBadge";
 import { useAuth } from "@/hooks/use-auth";
 
 export const Route = createFileRoute("/_authenticated/pedidos/")({
-  head: () => ({ meta: [{ title: "Meus pedidos — Doce Forno" }, { name: "description", content: "Acompanhe seus pedidos." }] }),
+  head: () => ({ meta: [{ title: "Meus pedidos — Doce Forno" }, { name: "description", content: "Acompanhe seus pedidos." }, { property: "og:title", content: "Meus pedidos — Doce Forno" }, { property: "og:description", content: "Acompanhe seus pedidos de cupcakes para retirada." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }),
   component: Orders,
 });
 
